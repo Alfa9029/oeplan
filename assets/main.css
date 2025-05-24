@@ -1,0 +1,82 @@
+.kanban-board {
+  display: flex;
+  gap: 28px;
+}
+/* Em telas pequenas, as colunas ficam uma embaixo da outra */
+@media (max-width: 900px) {
+  .kanban-board {
+    flex-direction: column;
+    gap: 18px;
+  }
+}
+
+.kanban-column {
+  flex: 1;
+  min-width: 240px;
+  background: var(--card-bg);
+  margin-bottom: 0;
+}
+@media (max-width: 900px) {
+  .kanban-column {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+.kanban-header {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+@media (max-width: 600px) {
+  .kanban-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+.modal {
+  background: #fff;
+  padding: 36px 30px;
+  border-radius: 16px;
+  box-shadow: 0 2px 24px #0004;
+  max-width: 400px;
+  width: 96vw;
+}
+@media (max-width: 480px) {
+  .modal {
+    padding: 18px 8px;
+    max-width: 99vw;
+    font-size: 0.97rem;
+  }
+}
+
+
+
+
+:root {
+    font-size: 16px;
+  --bg-main: #f8fafc;
+  --text-main: #191b1f;
+  --primary: #f66a0a;
+  --card-bg: #fff;
+}
+@media (max-width: 600px) {
+  :root {
+    font-size: 15px;
+  }
+}  
+[data-theme="dark"] {
+  --bg-main: #23272f;
+  --text-main: #f8fafc;
+  --primary: #f66a0a;
+  --card-bg: #2e323a;
+}
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  transition: background 0.25s, color 0.25s;
+}
